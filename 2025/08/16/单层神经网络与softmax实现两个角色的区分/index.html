@@ -7,7 +7,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/medias/softmax/cover.png">
 <meta property="article:published_time" content="2025-08-16T13:20:27.000Z">
-<meta property="article:modified_time" content="2025-08-17T02:27:58.327Z">
+<meta property="article:modified_time" content="2025-08-18T01:43:39.590Z">
 <meta property="article:author" content="Minigolfer">
 <meta property="article:tag" content="深度学习">
 <meta property="article:tag" content="神经网络">
@@ -20,7 +20,7 @@
   "url": "http://example.com/2025/08/16/%E5%8D%95%E5%B1%82%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8Esoftmax%E5%AE%9E%E7%8E%B0%E4%B8%A4%E4%B8%AA%E8%A7%92%E8%89%B2%E7%9A%84%E5%8C%BA%E5%88%86/",
   "image": "http://example.com/medias/softmax/cover.png",
   "datePublished": "2025-08-16T13:20:27.000Z",
-  "dateModified": "2025-08-17T02:27:58.327Z",
+  "dateModified": "2025-08-18T01:43:39.590Z",
   "author": [
     {
       "@type": "Person",
@@ -165,7 +165,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg" style="background-image: url(/img/background.jpg);"></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/medias/softmax/cover.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Minigolfer's blog</span></a><a class="nav-page-title" href="/"><span class="site-name">单层神经网络与softmax实现两个角色的区分</span></a></span><div id="menus"></div></nav><div id="post-info"><h1 class="post-title">单层神经网络与softmax实现两个角色的区分</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-08-16T13:20:27.000Z" title="发表于 2025-08-16 21:20:27">2025-08-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-08-17T02:27:58.327Z" title="更新于 2025-08-17 10:27:58">2025-08-17</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="单层神经网络与softmax-实现两个角色的区分">单层神经网络与softmax
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg" style="background-image: url(/img/background.jpg);"></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/medias/softmax/cover.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Minigolfer's blog</span></a><a class="nav-page-title" href="/"><span class="site-name">单层神经网络与softmax实现两个角色的区分</span></a></span><div id="menus"></div></nav><div id="post-info"><h1 class="post-title">单层神经网络与softmax实现两个角色的区分</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-08-16T13:20:27.000Z" title="发表于 2025-08-16 21:20:27">2025-08-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-08-18T01:43:39.590Z" title="更新于 2025-08-18 09:43:39">2025-08-18</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="单层神经网络与softmax-实现两个角色的区分">单层神经网络与softmax
 实现两个角色的区分</h1>
 <p>与回归任务相比，分类任务通常是多输出的，这也就实际上为多层神经网络的构建打下来一个基础。本文将从几个部分来详细阐述如何构建一个softmax回归（实际上是分类任务）模型并应用于现实案例。本文的代码基于李沐
 <strong>《动手学深度学习》</strong>
@@ -241,8 +241,9 @@ https://wenku.csdn.net/column/5r1gj02w35#2.2.2%20%E8%AE%AD%E7%BB%83%E6%95%B0%E6%
 <p>与线性回归不同,分类任务用到的损失函数一般是
 <strong>交叉熵损失函数(Cross Entropy Loss
 Function)</strong>。交叉熵损失函数用于衡量两个概率之间的区别,将它作为损失函数时,表达式为:</p>
-<p><span class="math display">$$l(y,\hat{y}) = -\sum_{i}
-y_{i}log\hat{y_{i}} $$</span></p>
+<p><span class="math display">$$
+l(y,\hat{y}) = -\sum_{i} y_{i}log\hat{y_{i}}
+$$</span></p>
 <p>其中, <span
 class="math inline"><em>y</em><sub><em>i</em></sub></span>
 是真实值(标签),<span class="math inline">$\hat{y_{i}}$</span>
@@ -250,16 +251,18 @@ class="math inline"><em>y</em><sub><em>i</em></sub></span>
 <strong>len(y_hat)=2</strong> 。由于在分类任务中,真实值通常是
 <strong>独热编码(one-hot)</strong> ,<span
 class="math inline"><em>y</em><sub><em>i</em></sub></span>的取值只能是0或1,所以损失函数可以简化为:</p>
-<p><span class="math display">$$l(y,\hat{y}) =
--log\hat{y_{i}}$$</span></p>
+<p><span class="math display">$$
+l(y,\hat{y}) = -log\hat{y_{i}}
+$$</span></p>
 <p>用python表示:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">cross_entropy</span>(<span class="params">y_hat, y</span>):</span><br><span class="line">    <span class="keyword">return</span> -torch.log(y_hat[<span class="built_in">range</span>(<span class="built_in">len</span>(y_hat)),y])</span><br><span class="line">    <span class="comment"># 这里使用了tensor的高级索引,可以在矩阵y_hat中找到真实标签所对应的概率</span></span><br></pre></td></tr></table></figure>
 <h3 id="激活函数">3.激活函数</h3>
 <p>神经网络在全连接层之后需要一个激活函数,对于本次要完成的单层神经网络而言也是同样的道理。我们选用了很常见的
 <strong>Softmax激活函数</strong>
 来作为这次的激活函数。softmax就是将向量中的每个元素作为自然指数函数的指数,再进行归一化,得到了每一种标签的概率。公式如下:</p>
-<p><span class="math display">$$ Softmax(x_{i})=
-\frac{e^{x_{i}}}{\sum_{j}e^{x_{j}}} $$</span></p>
+<p><span class="math display">$$
+Softmax(x_{i})= \frac{e^{x_{i}}}{\sum_{j}e^{x_{j}}}
+$$</span></p>
 <p>对于矩阵而言,softmax操作就是对每一行进行单独的softmax计算。</p>
 <p>用python表示:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">softmax</span>(<span class="params">X</span>):</span><br><span class="line">    X_exp = torch.exp(X)</span><br><span class="line">    partition = X_exp.<span class="built_in">sum</span>(<span class="number">1</span>, keepdim=<span class="literal">True</span>)  <span class="comment">#若keepdim=False，结果会被压缩成一维张量</span></span><br><span class="line">    <span class="keyword">return</span> X_exp/partition</span><br></pre></td></tr></table></figure>
@@ -349,8 +352,9 @@ num_channels = 3</code></pre>
 </div>
 <h3 id="正则化">2.正则化</h3>
 <p>正则化通过限制参数的范围,从而降低模型的复杂度,防止模型学习到训练数据中的噪声和无关细节以抑制过拟合。这里我采用L2正则化,其数学表达式如下(其n=2,λ=0.1):</p>
-<p><span class="math display">$$ Loss =
-CrossEntropy+λ(\sqrt[n]{W^{n}}+\sqrt[n]{b^{n}})$$</span></p>
+<p><span class="math display">$$
+Loss = CrossEntropy+λ(\sqrt[n]{W^{n}}+\sqrt[n]{b^{n}})
+$$</span></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">optimizer = optim.SGD(</span><br><span class="line">    params=[W, b],</span><br><span class="line">    lr=<span class="number">0.1</span>,</span><br><span class="line">    weight_decay=<span class="number">0.1</span>  <span class="comment"># L2正则化系数λ</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 经过测试,改进后的模型测试准确率在82%左右,相比于原先的模型有提升,但过拟合现象没有被根除。
 <div data-align="center">
