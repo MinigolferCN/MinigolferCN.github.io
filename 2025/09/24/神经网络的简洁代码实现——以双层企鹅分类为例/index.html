@@ -1,0 +1,482 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>神经网络的简洁代码实现——以双层企鹅分类为例 | Minigolfer's blog</title><meta name="author" content="Minigolfer"><meta name="copyright" content="Minigolfer"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="神经网络的简洁代码实现——以双层企鹅分类为例如你所见，在原先的项目中存在许多自定义函数模块，而这些模块其实已经封装在torch和d2l库中了。为了使得代码看起来更简洁，重点更加突出，同时方便后续学习，用封装好的库对这些函数进行替换就尤为重要。本文所用到的库： from d2l import torch as d2l from torch import nn  一、损失函数替换pytorch nn模">
+<meta property="og:type" content="article">
+<meta property="og:title" content="神经网络的简洁代码实现——以双层企鹅分类为例">
+<meta property="og:url" content="http://example.com/2025/09/24/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E7%AE%80%E6%B4%81%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0%E2%80%94%E2%80%94%E4%BB%A5%E5%8F%8C%E5%B1%82%E4%BC%81%E9%B9%85%E5%88%86%E7%B1%BB%E4%B8%BA%E4%BE%8B/index.html">
+<meta property="og:site_name" content="Minigolfer&#39;s blog">
+<meta property="og:description" content="神经网络的简洁代码实现——以双层企鹅分类为例如你所见，在原先的项目中存在许多自定义函数模块，而这些模块其实已经封装在torch和d2l库中了。为了使得代码看起来更简洁，重点更加突出，同时方便后续学习，用封装好的库对这些函数进行替换就尤为重要。本文所用到的库： from d2l import torch as d2l from torch import nn  一、损失函数替换pytorch nn模">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/medias/2layers/cover.jpg">
+<meta property="article:published_time" content="2025-09-24T09:15:36.000Z">
+<meta property="article:modified_time" content="2025-09-24T13:05:56.418Z">
+<meta property="article:author" content="Minigolfer">
+<meta property="article:tag" content="深度学习">
+<meta property="article:tag" content="神经网络">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/medias/2layers/cover.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "神经网络的简洁代码实现——以双层企鹅分类为例",
+  "url": "http://example.com/2025/09/24/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E7%AE%80%E6%B4%81%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0%E2%80%94%E2%80%94%E4%BB%A5%E5%8F%8C%E5%B1%82%E4%BC%81%E9%B9%85%E5%88%86%E7%B1%BB%E4%B8%BA%E4%BE%8B/",
+  "image": "http://example.com/medias/2layers/cover.jpg",
+  "datePublished": "2025-09-24T09:15:36.000Z",
+  "dateModified": "2025-09-24T13:05:56.418Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Minigolfer",
+      "url": "http://example.com/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/MiniGolfer.jpg"><link rel="canonical" href="http://example.com/2025/09/24/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E7%AE%80%E6%B4%81%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0%E2%80%94%E2%80%94%E4%BB%A5%E5%8F%8C%E5%B1%82%E4%BC%81%E9%B9%85%E5%88%86%E7%B1%BB%E4%B8%BA%E4%BE%8B/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '神经网络的简洁代码实现——以双层企鹅分类为例',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg" style="background-image: url(/img/background.jpg);"></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/medias/2layers/cover.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Minigolfer's blog</span></a><a class="nav-page-title" href="/"><span class="site-name">神经网络的简洁代码实现——以双层企鹅分类为例</span></a></span><div id="menus"></div></nav><div id="post-info"><h1 class="post-title">神经网络的简洁代码实现——以双层企鹅分类为例</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-09-24T09:15:36.000Z" title="发表于 2025-09-24 17:15:36">2025-09-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-09-24T13:05:56.418Z" title="更新于 2025-09-24 21:05:56">2025-09-24</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="神经网络的简洁代码实现——以双层企鹅分类为例"><a href="#神经网络的简洁代码实现——以双层企鹅分类为例" class="headerlink" title="神经网络的简洁代码实现——以双层企鹅分类为例"></a>神经网络的简洁代码实现——以双层企鹅分类为例</h1><p>如你所见，在原先的项目中存在许多自定义函数模块，而这些模块其实已经封装在torch和d2l库中了。为了使得代码看起来更简洁，重点更加突出，同时方便后续学习，用封装好的库对这些函数进行替换就尤为重要。<br>本文所用到的库：</p>
+<pre><code>from d2l import torch as d2l
+from torch import nn
+</code></pre>
+<h2 id="一、损失函数替换"><a href="#一、损失函数替换" class="headerlink" title="一、损失函数替换"></a>一、损失函数替换</h2><p>pytorch nn模块提供了十几种损失函数，这里调用的是交叉熵损失函数。</p>
+<p>原代码：</p>
+<pre><code>def cross_entropy(y_hat, y):
+    return -torch.log(y_hat[range(len(y_hat)), y])
+</code></pre>
+<p>调用：</p>
+<pre><code>loss = nn.CrossEntropyLoss()
+</code></pre>
+<h2 id="二、优化器"><a href="#二、优化器" class="headerlink" title="二、优化器"></a>二、优化器</h2><p>原代码：</p>
+<pre><code>def updater(batch_size):
+    return d2l.sgd([W1,W2, b1,b2],lr,batch_size)
+</code></pre>
+<p>调用：</p>
+<pre><code>Params = [W1, b1, W2, b2]
+updater = torch.optim.SGD(Params, lr=lr)
+</code></pre>
+<h2 id="三、模型训练"><a href="#三、模型训练" class="headerlink" title="三、模型训练"></a>三、模型训练</h2><p>这个模块有很多函数和一个类被封装到了d2l中。</p>
+<p>原代码：</p>
+<pre><code>class Accumulator:
+    def __init__(self, n):
+        self.data = [0.0] * n
+
+    def add(self, *args):
+        self.data = [a + float(b) for a, b in zip(self.data, args)]
+
+    def reset(self):
+        self.data = [0.0] * len(self.data)
+
+    def __getitem__(self, idx):
+        return self.data[idx]
+
+def accuracy(y_hat, y):
+if len(y_hat.shape)&gt;1 and y_hat.shape[1]&gt;1:
+    y_hat = y_hat.argmax(axis=1)
+cmp = y_hat.type(y.dtype) == y
+return float(cmp.type(y.dtype).sum())
+
+def evaluate_accuracy(net, data_iter):
+    if isinstance(net, torch.nn.Module):
+        net.eval()
+    metric = Accumulator(2)
+    with torch.no_grad():
+        for X,y in data_iter:
+            metric.add(accuracy(net(X),y), y.numel())
+    return metric[0]/metric[1]
+
+def train_epoch(net, train_iter, loss, updater):
+    metric = Accumulator(3)
+    for X, y in train_iter:
+        y_hat = net(X)
+        l = loss(y_hat, y)
+        l.sum().backward()
+        updater(X.shape[0])
+        metric.add(float(l.sum()), accuracy(y_hat, y), y.numel())
+
+    print(&quot;训练损失:&quot;, metric[0] / metric[2], &quot;训练准确率:&quot;, metric[1] / metric[2])
+    return metric[0] / metric[2], metric[1] / metric[2]
+
+def train(net, train_iter, test_iter, loss, num_epochs, updater):
+    animator = d2l.Animator(xlabel=&#39;epoch&#39;, xlim=[1, num_epochs],
+                            ylim=[0, 1],
+                            legend=[&#39;训练损失&#39;, &#39;训练准确率&#39;, &#39;测试准确率&#39;])
+    for epoch in range(num_epochs):
+        train_metrics = train_epoch(net, train_iter, loss, updater)
+        test_acc = evaluate_accuracy(net, test_iter)
+        train_loss, train_acc = train_metrics
+        animator.add(epoch + 1, (train_loss, train_acc, test_acc))
+
+    train_loss, train_acc = train_metrics
+    assert train_loss &lt; 0.5, train_loss
+    assert train_acc &lt;= 1 and train_acc &gt;= 0.7, train_acc
+    assert test_acc &lt;= 1 and test_acc &gt;= 0.7, test_acc
+    plt.show()
+    return train_loss, train_acc, test_acc
+
+if __name__ == &#39;__main__&#39;:‘
+    ###省略数据读取等
+train_loss, train_acc, test_acc = train(net, train_iter, test_iter, cross_entropy, num_epochs, updater)
+</code></pre>
+<p>调用：</p>
+<pre><code>d2l.train_ch3(net, train_iter, test_iter, loss, num_epochs, updater)
+d2l.plt.show()
+</code></pre>
+<p>但值得注意的是，最新版的d2l（1.0.3）是不包含train_ch3这个函数的。我在编写代码的时候收到错误报告如下：</p>
+<pre><code>Traceback (most recent call last):
+File &quot;E:\Documents_E\code\python\深度学习环境\two layers network clean\2layers.py&quot;, line 101, in &lt;module&gt;
+    d2l.train_ch3(net, train_iter, test_iter, loss, num_epochs, updater)
+AttributeError: module &#39;d2l.torch&#39; has no attribute &#39;train_ch3&#39;. Did you mean: &#39;train_ch13&#39;?
+类别:  3
+</code></pre>
+<p>我以为是train_ch3的功能被整合到了train_ch13里，但我换成train_ch13后继续报错：</p>
+<pre><code>Traceback (most recent call last):
+File &quot;E:\Documents_E\code\python\深度学习环境\two layers network clean\2layers.py&quot;, line 101, in &lt;module&gt;
+    d2l.train_ch13(net, train_iter, test_iter, loss, num_epochs, updater)
+File &quot;E:\Documents_E\code\python\深度学习环境\.venv\lib\site-packages\d2l\torch.py&quot;, line 1507, in train_ch13
+    net = nn.DataParallel(net, device_ids=devices).to(devices[0])
+IndexError: list index out of range
+</code></pre>
+<p>这里我本来想让ai看一下，但是感觉自己有点太依赖ai了，就尝试自己去排查一下。打开d2l.py，找到train_ch13函数发现长这样：</p>
+<pre><code>def train_ch13(net, train_iter, test_iter, loss, trainer, num_epochs,
+            devices=d2l.try_all_gpus()):
+    &quot;&quot;&quot;Train a model with multiple GPUs (defined in Chapter 13).
+
+    Defined in :numref:`sec_image_augmentation`&quot;&quot;&quot;
+    timer, num_batches = d2l.Timer(), len(train_iter)
+    animator = d2l.Animator(xlabel=&#39;epoch&#39;, xlim=[1, num_epochs], ylim=[0, 1],
+                            legend=[&#39;train loss&#39;, &#39;train acc&#39;, &#39;test acc&#39;])
+    net = nn.DataParallel(net, device_ids=devices).to(devices[0])
+        #...
+</code></pre>
+<p>看来意思是 <strong>net &#x3D; nn.DataParallel(net, device_ids&#x3D;devices).to(devices[0])</strong> 这一句出现了 <strong>索引超出范围</strong> 的错误。那这个devices到底是什么呢？在查阅了文章之后我发现train_ch13是一个调用多GPU训练的函数。由于我没有采用CUDA，这个函数对我来说没有用。解决方法就是在原本的d2l.py中手动加入train_ch3相关的函数：</p>
+<pre><code>class Animator:
+    def __init__(self, xlabel=None, ylabel=None, legend=None, xlim=None,
+                ylim=None, xscale=&#39;linear&#39;, yscale=&#39;linear&#39;,
+                fmts=(&#39;-&#39;, &#39;m--&#39;, &#39;g-.&#39;, &#39;r:&#39;), nrows=1, ncols=1,
+                figsize=(3.5, 2.5)):
+        &quot;&quot;&quot;初始化动画&quot;&quot;&quot;
+        if legend is None:
+            legend = []
+
+        d2l.use_svg_display()
+        self.fig, self.axes = d2l.plt.subplots(nrows, ncols, figsize=figsize)
+        if nrows * ncols == 1:
+            self.axes = [self.axes, ]
+        # 使用lambda函数捕获参数
+        self.config_axes = lambda: d2l.set_axes(self.axes[0], xlabel, ylabel,
+                                                xlim, ylim, xscale, yscale,
+                                                legend)
+        self.X, self.Y, self.fmts = None, None, fmts
+
+    def add(self, x, y):  # 添加数据点
+        if not hasattr(y, &quot;__len__&quot;): y = [y]
+        n = len(y)
+        if not hasattr(x, &quot;__len__&quot;): x = [x] * n
+        if not self.X: self.X = [[] for _ in range(n)]
+        if not self.Y: self.Y = [[] for _ in range(n)]
+        for i, (a, b) in enumerate(zip(x, y)):
+            if a is not None and b is not None:
+                self.X[i].append(a)
+                self.Y[i].append(b)
+        self.axes[0].cla()
+        for x, y, fmt in zip(self.X, self.Y, self.fmts):
+            self.axes[0].plot(x, y, fmt)
+        self.config_axes()
+        display.display(self.fig)
+        display.clear_output(wait=True)  # 清除输出，等待下一个输出
+
+
+def accuracy(y_hat, y):
+    &quot;&quot;&quot;计算预测正确的数量&quot;&quot;&quot;
+    if len(y_hat.shape) &gt; 1 and y_hat.shape[1] &gt; 1:
+        y_hat = y_hat.argmax(axis=1)  # axis=1表示按行取最大值
+    cmp = y_hat.type(y.dtype) == y  # 将y_hat和y转换为相同的数据类型，然后比较是否相等
+    return float(cmp.type(y.dtype).sum())  # 将布尔值转换为浮点数，然后求和
+
+
+# type(y.dtype)表示将y转换为相同的数据类型
+
+def evaluate_accuracy(net, data_iter):  # net是模型，data_iter是数据迭代器
+    &quot;&quot;&quot;计算在指定数据集上模型的精度&quot;&quot;&quot;
+    if isinstance(net, torch.nn.Module):
+        net.eval()  # 将模型设置为评估模式
+    metric = Accumulator(2)  # 用于计算两个值的累加器
+    with torch.no_grad():  # 关闭梯度计算
+        for X, y in data_iter:  # 遍历数据迭代器
+            metric.add(accuracy(net(X), y), y.numel())  # 计算准确率和样本数量,numel()返回张量的元素数量
+    return metric[0] / metric[1]  # 返回准确率
+
+
+def train_epoch_ch3(net, train_iter, loss, updater):
+    &quot;&quot;&quot;训练模型一个迭代周期&quot;&quot;&quot;
+    if isinstance(net, torch.nn.Module):  # 判断net是否为torch.nn.Module的实例
+        net.train()  # 将模型设置为训练模式
+    metric = Accumulator(3)  # 用于计算三个值的累加器
+    for X, y in train_iter:
+        y_hat = net(X)  # 前向传播
+        l = loss(y_hat, y)  # 计算损失
+        if isinstance(updater, torch.optim.Optimizer):
+            updater.zero_grad()  # 清除梯度
+            l.mean().backward()  # 反向传播
+            updater.step()  # 更新参数
+        else:
+            l.sum().backward()  # 反向传播
+            updater(X.shape[0])  # 更新参数
+        metric.add(l.sum(), accuracy(y_hat, y), y.numel())  # 累加损失、准确率和样本数量
+    print(&quot;训练损失:&quot;, metric[0] / metric[2], &quot;训练准确率:&quot;, metric[1] / metric[2])
+    return metric[0] / metric[2], metric[1] / metric[2]  # 返回平均损失和平均准确率
+
+
+def train_ch3(net, train_iter, test_iter, loss, num_epochs, updater):
+    &quot;&quot;&quot;训练模型&quot;&quot;&quot;
+    animator = Animator(xlabel=&#39;epoch&#39;, ylabel=&#39;loss&#39;,
+                        legend=[&#39;train loss&#39;, &#39;train acc&#39;, &#39;test acc&#39;])
+    for epoch in range(num_epochs):
+        train_metrics = train_epoch_ch3(net, train_iter, loss, updater)  # 训练一个迭代周期
+        test_acc = evaluate_accuracy(net, test_iter)  # 计算测试集上的精度
+        animator.add(epoch + 1, train_metrics + (test_acc,))
+    train_loss, train_acc = train_metrics
+    assert train_loss &lt; 0.5, train_loss
+    assert train_acc &lt;= 1 and train_acc &gt; 0.7, train_acc
+    assert test_acc &lt;= 1 and test_acc &gt; 0.7, test_acc  # assert语句用于测试条件是否为真，如果不为真则抛出异常
+    return train_loss, train_acc, test_acc
+</code></pre>
+<p>到这里就基本完成代码简洁化了，以下是完整代码：</p>
+<pre><code>from inspect import Parameter
+
+from torch.utils.data import DataLoader,Dataset
+from torchvision import transforms
+import torch
+from torch import nn
+from d2l import torch as d2l
+import matplotlib.pyplot as plt
+import matplotlib.font_manager as fm
+import pandas as pd
+
+class MyDataset(Dataset):
+    def __init__(self, file):
+        self.data_frame = file
+        # 数据标准化
+        features = file.iloc[:, :-1].values.astype(&#39;float32&#39;)
+        self.features = (features - features.mean(axis=0)) / (features.std(axis=0) + 1e-8)
+        self.labels = file.iloc[:, -1].values
+
+    def __len__(self):
+        return len(self.data_frame)
+
+    def __getitem__(self, idx):
+        features = torch.tensor(self.features[idx])
+        label = torch.tensor(self.labels[idx], dtype=torch.long)
+        return features, label
+
+
+def data_loader(batch_size, root):
+    file = pd.read_csv(root).dropna()
+    file_len = len(file)
+    file.insert(7, &#39;Specie&#39;, 0)
+
+    for i in range(0, file_len):
+        species = file.iloc[i].values[0]
+        if species == &quot;Adelie Penguin (Pygoscelis adeliae)&quot;:
+            file.iat[i, 7] = 0
+        elif species == &quot;Chinstrap penguin (Pygoscelis antarctica)&quot;:
+            file.iat[i, 7] = 1
+        elif species == &quot;Gentoo penguin (Pygoscelis papua)&quot;:
+            file.iat[i, 7] = 2
+
+    file = file.drop(&quot;Species&quot;, axis=1)
+    file = file.sample(frac=1).reset_index(drop=True)
+
+    train_dataset = MyDataset(file[0:301])
+    test_dataset = MyDataset(file[301:])
+
+    train_iter = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, num_workers=0)
+    test_iter = DataLoader(test_dataset, batch_size=batch_size, shuffle=False, num_workers=0)
+
+    input_size = file.shape[1]-1
+    output_size = 3
+
+    print(&quot;类别: &quot;,3)
+    print(&quot;训练集大小: &quot;,len(train_dataset), &quot;测试集大小: &quot;,len(test_dataset))
+
+    return train_iter, test_iter, train_dataset, input_size, output_size
+
+# 改进的交叉熵，避免log(0)
+loss = nn.CrossEntropyLoss()
+
+def ReLU(X):
+    return torch.maximum(torch.tensor(0.0), X)
+
+def net(X):
+    hiddenlayer = ReLU(torch.matmul(X,W1) + b1)
+    return torch.matmul(hiddenlayer.reshape((-1, W2.shape[0])),W2) + b2
+
+if __name__ == &#39;__main__&#39;:
+    plt.rcParams[&#39;font.sans-serif&#39;] = [&#39;SimHei&#39;]  # 设置中文字体
+
+    lr = 0.005
+    num_epochs = 15
+    batch_size = 8
+    num_hiddens = 8
+
+    root = &quot;penguins_data.csv&quot;
+
+    train_iter, test_iter, dataset, num_inputs, num_outputs = data_loader(batch_size,root=root)
+
+    print(f&quot;输入特征数: &#123;num_inputs&#125;, 输出类别数: &#123;num_outputs&#125;&quot;)
+
+    W1 = nn.Parameter(torch.randn(num_inputs, num_hiddens, requires_grad=True))
+    W2 = nn.Parameter(torch.randn(num_hiddens, num_outputs, requires_grad=True))
+
+    b1 = nn.Parameter(torch.zeros(num_hiddens, requires_grad=True))
+    b2 = nn.Parameter(torch.zeros(3, requires_grad=True))
+
+    #nn.Parameters(参数),不加也行
+    Params = [W1, b1, W2, b2]
+    updater = torch.optim.SGD(Params, lr=lr)
+
+    train_loss, train_acc, test_acc = d2l.train_ch3(net, train_iter, test_iter, loss, num_epochs, updater)
+    print(f&quot;训练结束 - 最终损失: &#123;train_loss:.3f&#125;, 训练准确率: &#123;train_acc:.3f&#125;, 测试准确率: &#123;test_acc:.3f&#125;&quot;)
+    
+    d2l.plt.show()
+</code></pre>
+<p>运行结果如图所示：</p>
+<div align="center">
+  <img src="/medias/2layers_clean/Figure_1.png" alt="训练1" width="400">
+</div>
+
+<p>参考文献：</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/1933884735584699767">https://zhuanlan.zhihu.com/p/1933884735584699767</a>    解决报错 AttributeError:module ‘d2l.torch’ has no attribute ‘train_ch3’ 的方法<br><a target="_blank" rel="noopener" href="https://blog.51cto.com/u_16213563/12745286">https://blog.51cto.com/u_16213563/12745286</a>  ollama 没有使用gpu</p>
+<div align="center">
+  <img src="/medias/MiniGolfer.jpg" alt=" " width="100">
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">Minigolfer</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2025/09/24/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E7%AE%80%E6%B4%81%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0%E2%80%94%E2%80%94%E4%BB%A5%E5%8F%8C%E5%B1%82%E4%BC%81%E9%B9%85%E5%88%86%E7%B1%BB%E4%B8%BA%E4%BE%8B/">http://example.com/2025/09/24/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E7%AE%80%E6%B4%81%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0%E2%80%94%E2%80%94%E4%BB%A5%E5%8F%8C%E5%B1%82%E4%BC%81%E9%B9%85%E5%88%86%E7%B1%BB%E4%B8%BA%E4%BE%8B/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://example.com" target="_blank">Minigolfer's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a><a class="post-meta__tags" href="/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">神经网络</a></div><div class="post-share"><div class="social-share" data-image="/medias/2layers/cover.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2025/09/19/%E5%8F%8C%E5%B1%82%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%AE%9E%E7%8E%B0%E4%BC%81%E9%B9%85%E5%88%86%E7%B1%BB%E4%BB%BB%E5%8A%A1/" title="双层神经网络实现企鹅分类任务"><img class="cover" src="/medias/2layers/cover.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">双层神经网络实现企鹅分类任务</div></div><div class="info-2"><div class="info-item-1">双层神经网络实现企鹅分类任务在单层神经网络的基础之上增添一层隐藏层，就能得到了一般的多层神经网络，因而本文仅展示本项目与单层神经网络不同的地方。本文的代码基于李沐 《动手学深度学习》 https://zh.d2l.ai/chapter_multilayer-perceptrons/index.html数据读取操作基于51cto用户mob649e8156b567的文章 https://blog.51cto.com/u_16175443/12175717 一、层数增加增加层数要从几个方面来修改代码： 1.参数增加hid = 8 #指定大小为8的隐藏层  W1 = torch.normal(0, 0.01, size=(input_size, hid), requires_grad=True) W2 = torch.normal(0, 0.01, size=(hid, output_size), requires_grad=True)  b1 = torch.zeros(hid, requires_grad=True) b2 = torch.zeros(3,...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2025/09/19/%E5%8F%8C%E5%B1%82%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%AE%9E%E7%8E%B0%E4%BC%81%E9%B9%85%E5%88%86%E7%B1%BB%E4%BB%BB%E5%8A%A1/" title="双层神经网络实现企鹅分类任务"><img class="cover" src="/medias/2layers/cover.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-09-19</div><div class="info-item-2">双层神经网络实现企鹅分类任务</div></div><div class="info-2"><div class="info-item-1">双层神经网络实现企鹅分类任务在单层神经网络的基础之上增添一层隐藏层，就能得到了一般的多层神经网络，因而本文仅展示本项目与单层神经网络不同的地方。本文的代码基于李沐 《动手学深度学习》 https://zh.d2l.ai/chapter_multilayer-perceptrons/index.html数据读取操作基于51cto用户mob649e8156b567的文章 https://blog.51cto.com/u_16175443/12175717 一、层数增加增加层数要从几个方面来修改代码： 1.参数增加hid = 8 #指定大小为8的隐藏层  W1 = torch.normal(0, 0.01, size=(input_size, hid), requires_grad=True) W2 = torch.normal(0, 0.01, size=(hid, output_size), requires_grad=True)  b1 = torch.zeros(hid, requires_grad=True) b2 = torch.zeros(3,...</div></div></div></a><a class="pagination-related" href="/2025/08/16/%E5%8D%95%E5%B1%82%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8Esoftmax%E5%AE%9E%E7%8E%B0%E4%B8%A4%E4%B8%AA%E8%A7%92%E8%89%B2%E7%9A%84%E5%8C%BA%E5%88%86/" title="单层神经网络与softmax实现两个角色的区分"><img class="cover" src="/medias/softmax/cover.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-08-16</div><div class="info-item-2">单层神经网络与softmax实现两个角色的区分</div></div><div class="info-2"><div class="info-item-1">单层神经网络与softmax 实现两个角色的区分与回归任务相比，分类任务通常是多输出的，这也就实际上为多层神经网络的构建打下来一个基础。本文将从几个部分来详细阐述如何构建一个softmax回归（实际上是分类任务）模型并应用于现实案例。本文的代码基于李沐 《动手学深度学习》 https://zh.d2l.ai/chapter_linear-networks/softmax-regression-scratch.html ,改进与优化部分思路来自CSDN用户 SW_孙维 的文章 https://wenku.csdn.net/column/5r1gj02w35#2.2.2%20%E8%AE%AD%E7%BB%83%E6%95%B0%E6%8D%AE%E9%87%8F%E4%B8%8E%E8%B4%A8%E9%87%8F%E7%9A%84%E4%BD%9C%E7%94%A8 一、概念解析softmax回归简单理解就是一种复杂版的线性回归，并且在输出前用 softmax激活函数 来输出分类结果。区别在于损失函数的选择和输出结果的数量。   ...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/MiniGolfer.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Minigolfer</div><div class="author-info-description">欢迎来到我的博客！我会在这里更新有关学习生活等方面的文章，作为对生活的记录。B站:@MiniGolfer</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">8</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">来参加2025年7月的杭州tho!</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E7%AE%80%E6%B4%81%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0%E2%80%94%E2%80%94%E4%BB%A5%E5%8F%8C%E5%B1%82%E4%BC%81%E9%B9%85%E5%88%86%E7%B1%BB%E4%B8%BA%E4%BE%8B"><span class="toc-number">1.</span> <span class="toc-text">神经网络的简洁代码实现——以双层企鹅分类为例</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E6%9B%BF%E6%8D%A2"><span class="toc-number">1.1.</span> <span class="toc-text">一、损失函数替换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%BC%98%E5%8C%96%E5%99%A8"><span class="toc-number">1.2.</span> <span class="toc-text">二、优化器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83"><span class="toc-number">1.3.</span> <span class="toc-text">三、模型训练</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/09/24/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E7%AE%80%E6%B4%81%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0%E2%80%94%E2%80%94%E4%BB%A5%E5%8F%8C%E5%B1%82%E4%BC%81%E9%B9%85%E5%88%86%E7%B1%BB%E4%B8%BA%E4%BE%8B/" title="神经网络的简洁代码实现——以双层企鹅分类为例"><img src="/medias/2layers/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="神经网络的简洁代码实现——以双层企鹅分类为例"/></a><div class="content"><a class="title" href="/2025/09/24/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E7%AE%80%E6%B4%81%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0%E2%80%94%E2%80%94%E4%BB%A5%E5%8F%8C%E5%B1%82%E4%BC%81%E9%B9%85%E5%88%86%E7%B1%BB%E4%B8%BA%E4%BE%8B/" title="神经网络的简洁代码实现——以双层企鹅分类为例">神经网络的简洁代码实现——以双层企鹅分类为例</a><time datetime="2025-09-24T09:15:36.000Z" title="发表于 2025-09-24 17:15:36">2025-09-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/09/19/%E5%8F%8C%E5%B1%82%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%AE%9E%E7%8E%B0%E4%BC%81%E9%B9%85%E5%88%86%E7%B1%BB%E4%BB%BB%E5%8A%A1/" title="双层神经网络实现企鹅分类任务"><img src="/medias/2layers/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="双层神经网络实现企鹅分类任务"/></a><div class="content"><a class="title" href="/2025/09/19/%E5%8F%8C%E5%B1%82%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%AE%9E%E7%8E%B0%E4%BC%81%E9%B9%85%E5%88%86%E7%B1%BB%E4%BB%BB%E5%8A%A1/" title="双层神经网络实现企鹅分类任务">双层神经网络实现企鹅分类任务</a><time datetime="2025-09-19T03:56:36.000Z" title="发表于 2025-09-19 11:56:36">2025-09-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/09/11/2025%E6%9A%91%E5%81%87%E6%80%BB%E7%BB%93/" title="2025暑假总结"><img src="/img/cover_defult.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2025暑假总结"/></a><div class="content"><a class="title" href="/2025/09/11/2025%E6%9A%91%E5%81%87%E6%80%BB%E7%BB%93/" title="2025暑假总结">2025暑假总结</a><time datetime="2025-09-11T04:23:05.000Z" title="发表于 2025-09-11 12:23:05">2025-09-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/08/16/%E5%8D%95%E5%B1%82%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8Esoftmax%E5%AE%9E%E7%8E%B0%E4%B8%A4%E4%B8%AA%E8%A7%92%E8%89%B2%E7%9A%84%E5%8C%BA%E5%88%86/" title="单层神经网络与softmax实现两个角色的区分"><img src="/medias/softmax/cover.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="单层神经网络与softmax实现两个角色的区分"/></a><div class="content"><a class="title" href="/2025/08/16/%E5%8D%95%E5%B1%82%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8Esoftmax%E5%AE%9E%E7%8E%B0%E4%B8%A4%E4%B8%AA%E8%A7%92%E8%89%B2%E7%9A%84%E5%8C%BA%E5%88%86/" title="单层神经网络与softmax实现两个角色的区分">单层神经网络与softmax实现两个角色的区分</a><time datetime="2025-08-16T13:20:27.000Z" title="发表于 2025-08-16 21:20:27">2025-08-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/07/03/%E5%86%9B%E9%98%9F%E7%9A%84%E7%A3%A8%E9%9A%BE1958-1960/" title="军队的磨难1958-1960"><img src="/medias/%E5%88%98%E4%BC%AF%E6%89%BF.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="军队的磨难1958-1960"/></a><div class="content"><a class="title" href="/2025/07/03/%E5%86%9B%E9%98%9F%E7%9A%84%E7%A3%A8%E9%9A%BE1958-1960/" title="军队的磨难1958-1960">军队的磨难1958-1960</a><time datetime="2025-07-03T04:25:36.000Z" title="发表于 2025-07-03 12:25:36">2025-07-03</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent;"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2025 By Minigolfer</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><div class="aplayer no-destroy" data-id="36980281" data-server="netease" data-type="album" data-fixed="true" data-autoplay="true" data-lrcType="-1"> </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
