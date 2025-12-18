@@ -1,0 +1,271 @@
+<mxfile host="Electron" modified="2025-12-18T12:13:58.937Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.4.8 Chrome/124.0.6367.207 Electron/30.0.6 Safari/537.36" etag="LPICK5oX8HAtn_bD5GM2" version="24.4.8" type="device">
+  <diagram name="第 1 页" id="txGWj4FF3PPoW_qNGwWc">
+    <mxGraphModel dx="1562" dy="957" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="tV22roehR8ONlWOXkeKM-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Times New Roman;" parent="1" source="tV22roehR8ONlWOXkeKM-1" target="tV22roehR8ONlWOXkeKM-4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-1" value="偏移&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;YYYY-MM-DD HH:MM:SS&amp;nbsp; &amp;nbsp; Tc" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="330" y="90" width="288" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-2" value="K1-V1（LongWritable-Text）" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="391.5" y="60" width="165" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Times New Roman;" parent="1" source="tV22roehR8ONlWOXkeKM-3" target="tV22roehR8ONlWOXkeKM-17" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Times New Roman;" parent="1" source="tV22roehR8ONlWOXkeKM-3" target="tV22roehR8ONlWOXkeKM-18" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Times New Roman;" parent="1" source="tV22roehR8ONlWOXkeKM-3" target="tV22roehR8ONlWOXkeKM-20" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-3" value="（温度-年-月）&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;YYYY-MM-DD HH:MM:SS&amp;nbsp; &amp;nbsp; Tc" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="330" y="170" width="288" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-4" value="K2- V2（WeatherBean-Text）" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="391.5" y="150" width="165" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-51" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Times New Roman;" parent="1" source="tV22roehR8ONlWOXkeKM-9" target="tV22roehR8ONlWOXkeKM-36" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-9" value="（温度-年-1月）&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;2015-01-13 10:40:49&lt;span style=&quot;white-space:pre&quot;&gt;&#x9;&lt;/span&gt;1.7c&lt;br&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;（温度-年-1月）&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2015-01-06 17:29:52&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;5.9c&lt;br&gt;&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;（温度-年-1月）&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/span&gt;2015-01-07 17:47:45&lt;span style=&quot;white-space:pre&quot;&gt;&#x9;&lt;/span&gt;5.0c&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;（温度-年-1月）&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/span&gt;2015-01-08 19:05:36&lt;span style=&quot;white-space:pre&quot;&gt;&#x9;&lt;/span&gt;6.3c&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;b&gt;···&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;（温度-年-1月）&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/span&gt;2015-01-09 06:13:43&lt;span style=&quot;white-space:pre&quot;&gt;&#x9;&lt;/span&gt;3.1c&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="60" y="280" width="270" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-50" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Times New Roman;" parent="1" source="tV22roehR8ONlWOXkeKM-10" target="tV22roehR8ONlWOXkeKM-38" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-10" value="（温度-年-2月）&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;2015-02-23 15:58:32&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;2.9c&lt;div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;（温度-年-2月）&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/span&gt;2015-02-12 16:48:48&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;1.4c&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;（温度-年-2月）&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/span&gt;2015-02-13 12:32:56&lt;span style=&quot;white-space:pre&quot;&gt;&#x9;&lt;/span&gt;11.3c&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;（温度-年-2月）&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/span&gt;2015-02-14 14:47:23&lt;span style=&quot;white-space:pre&quot;&gt;&#x9;&lt;/span&gt;1.2c&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;b style=&quot;&quot;&gt;···&lt;/b&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;（温度-年-2月）&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/span&gt;2015-02-15 12:49:00&lt;span style=&quot;white-space:pre&quot;&gt;&#x9;&lt;/span&gt;4.7c&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="333.5" y="280" width="281" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-49" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Times New Roman;" parent="1" source="tV22roehR8ONlWOXkeKM-11" target="tV22roehR8ONlWOXkeKM-37" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-11" value="（温度-年-12月）&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;2024-12-29 01:44:17&lt;span style=&quot;white-space:pre&quot;&gt;&#x9;&lt;/span&gt;4.1c&lt;div&gt;（温度-年-12月）&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2024-12-24 03:19:57&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;5.8c&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;（温度-年-12月）&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/span&gt;2024-12-25 05:28:54&lt;span style=&quot;white-space:pre&quot;&gt;&#x9;&lt;/span&gt;3.1c&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;（温度-年-12月）&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/span&gt;2024-12-26 06:48:45&lt;span style=&quot;white-space:pre&quot;&gt;&#x9;&lt;/span&gt;7.9c&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;b&gt;···&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;（温度-年-12月）&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/span&gt;2024-12-27 05:00:04&lt;span style=&quot;white-space:pre&quot;&gt;&#x9;&lt;/span&gt;9.5c&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="635.5" y="280" width="279" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-12" value="&lt;b&gt;···&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="614.5" y="325" width="21" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-17" value="K2- V2（WeatherBean-Text）" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="81.5" y="260" width="248.5" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-18" value="K2- V2（WeatherBean-Text）" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="650.75" y="260" width="248.5" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-20" value="K2- V2（WeatherBean-Text）" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="349.75" y="260" width="248.5" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-59" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Times New Roman;" parent="1" source="tV22roehR8ONlWOXkeKM-32" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="195.04761904761904" y="589.9999999999999" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-32" value="&lt;span style=&quot;background-color: initial;&quot;&gt;（温度-年-1月）&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2015-01-08 19:05:36&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;6.3c&lt;br&gt;&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;（温度-年-1月）&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2015-01-06 17:29:52&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;5.9c&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;（温度-年-1月）&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2015-01-07 17:47:45&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;5.0c&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;（&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;温度-年-1月）&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2015-01-09 06:13:43&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;3.1c&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;b style=&quot;&quot;&gt;···&lt;/b&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;（温度-年-1月）&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2015-01-13 10:40:49&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;1.7c&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="60" y="450" width="270" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-60" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Times New Roman;" parent="1" source="tV22roehR8ONlWOXkeKM-33" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="474.04761904761904" y="589.9999999999999" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-33" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;（温度-年-2月）&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2015-02-13 12:32:56&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;11.3c&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;（温度-年-2月）&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2015-02-15 12:49:00&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;4.7c&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;（温度-年-2月）&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2015-02-23 15:58:32&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2.9c&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;（温度-年-2月）&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2015-02-12 16:48:48&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;1.4c&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;b&gt;···&lt;/b&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;（温度-年-2月）&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2015-02-14 14:47:23&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;1.2c&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="333.5" y="450" width="281" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-61" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Times New Roman;" parent="1" source="tV22roehR8ONlWOXkeKM-34" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="775.047619047619" y="589.9999999999999" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-34" value="&lt;div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;（温度-年-12月）&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2024-12-27 05:00:04&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;9.5c&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;（温度-年-12月）&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2024-12-26 06:48:45&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;7.9c&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;（温度-年-12月）&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2024-12-24 03:19:57&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;5.8c&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;（温度-年-12月）&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;2024-12-29 01:44:17&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;4.1c&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;div style=&quot;&quot;&gt;&lt;b&gt;···&lt;/b&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;（温度-年-12月）&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/span&gt;2024-12-25 05:28:54&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;3.1c&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="635.5" y="450" width="279" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-35" value="&lt;b&gt;···&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="614.5" y="495" width="21" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-36" value="K2- V2（WeatherBean-Text）" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="70.75" y="430" width="248.5" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-37" value="K2- V2（WeatherBean-Text）" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="650.75" y="430" width="248.5" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-38" value="K2- V2（WeatherBean-Text）" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="349.75" y="430" width="248.5" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-40" value="Map" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="991" y="135" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-41" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="981" y="210" width="20" height="73" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-42" value="Partition" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="1005" y="230" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-43" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="981" y="283" width="20" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-44" value="Sort" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="1005" y="410" width="40" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-45" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="981" y="563" width="20" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-46" value="Group*3" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="991" y="628" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-47" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="981" y="723" width="20" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-48" value="Reduce" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="995" y="818" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-81" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Times New Roman;" parent="1" source="tV22roehR8ONlWOXkeKM-63" target="tV22roehR8ONlWOXkeKM-76" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-63" value="&lt;span style=&quot;background-color: initial;&quot;&gt;（温度-年-1月）&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2015-01-08 19:05:36&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;6.3c&lt;br&gt;&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;（温度-年-1月）&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2015-01-06 17:29:52&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;5.9c&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;（温度-年-1月）&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2015-01-07 17:47:45&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;5.0c&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;（温度-年-1月）&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2015-01-09 06:13:43&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;3.1c&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;b style=&quot;&quot;&gt;···&lt;/b&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;（温度-年-1月）&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2015-01-13 10:40:49&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;1.7c&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;fontFamily=Times New Roman;labelBorderColor=default;" parent="1" vertex="1">
+          <mxGeometry x="60" y="610" width="270" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-80" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Times New Roman;" parent="1" source="tV22roehR8ONlWOXkeKM-65" target="tV22roehR8ONlWOXkeKM-78" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-65" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;（温度-年-2月）&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2015-02-13 12:32:56&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;11.3c&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;（温度-年-2月）&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2015-02-15 12:49:00&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;4.7c&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;（温度-年-2月）&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2015-02-23 15:58:32&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2.9c&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;（温度-年-2月）&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2015-02-12 16:48:48&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;1.4c&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;b&gt;···&lt;/b&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;（温度-年-2月）&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2015-02-14 14:47:23&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;1.2c&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Times New Roman;labelBorderColor=default;" parent="1" vertex="1">
+          <mxGeometry x="333.5" y="610" width="281" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-79" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Times New Roman;" parent="1" source="tV22roehR8ONlWOXkeKM-67" target="tV22roehR8ONlWOXkeKM-77" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-67" value="&lt;div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;（温度-年-12月）&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2024-12-27 05:00:04&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;9.5c&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;（温度-年-12月）&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2024-12-26 06:48:45&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;7.9c&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;（温度-年-12月）&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2024-12-24 03:19:57&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;5.8c&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;（温度-年-12月）&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;2024-12-29 01:44:17&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;4.1c&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;div style=&quot;&quot;&gt;&lt;b&gt;···&lt;/b&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;（温度-年-12月）&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/span&gt;2024-12-25 05:28:54&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;3.1c&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;fontFamily=Times New Roman;labelBorderColor=default;" parent="1" vertex="1">
+          <mxGeometry x="635.5" y="610" width="279" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-68" value="&lt;b&gt;···&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="614.5" y="655" width="21" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-69" value="K2- V2&#39;（WeatherBean-Iteratble&amp;lt;Text&amp;gt;）" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="70.75" y="590" width="248.5" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-70" value="K2- V2&#39;（WeatherBean-Iteratble&amp;lt;Text&amp;gt;）" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="650.75" y="590" width="248.5" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-71" value="K2- V2&#39;（WeatherBean-Iteratble&amp;lt;Text&amp;gt;）" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="349.75" y="590" width="248.5" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-92" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Times New Roman;" parent="1" source="tV22roehR8ONlWOXkeKM-72" target="tV22roehR8ONlWOXkeKM-86" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-72" value="&lt;span style=&quot;background-color: initial;&quot;&gt;（温度-年-1月）&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2015-01-08 19:05:36&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;6.3c&lt;br&gt;&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;（温度-年-1月）&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2015-01-06 17:29:52&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;5.9c&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;（温度-年-1月）&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2015-01-07 17:47:45&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;5.0c&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;fontFamily=Times New Roman;labelBorderColor=default;" parent="1" vertex="1">
+          <mxGeometry x="60" y="770" width="270" height="63" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-93" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Times New Roman;" parent="1" source="tV22roehR8ONlWOXkeKM-73" target="tV22roehR8ONlWOXkeKM-90" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-73" value="&lt;span style=&quot;background-color: initial;&quot;&gt;（温度-年-2月）&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2015-02-13 12:32:56&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;11.3c&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;（温度-年-2月）&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2015-02-15 12:49:00&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;4.7c&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;（温度-年-2月）&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2015-02-23 15:58:32&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2.9c&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Times New Roman;labelBorderColor=default;" parent="1" vertex="1">
+          <mxGeometry x="333.5" y="770" width="281" height="63" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-94" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Times New Roman;" parent="1" source="tV22roehR8ONlWOXkeKM-74" target="tV22roehR8ONlWOXkeKM-91" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-74" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;（温度-年-12月）&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2024-12-27 05:00:04&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;9.5c&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;（温度-年-12月）&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2024-12-26 06:48:45&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;7.9c&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;（温度-年-12月）&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2024-12-24 03:19:57&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;5.8c&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;fontFamily=Times New Roman;labelBorderColor=default;" parent="1" vertex="1">
+          <mxGeometry x="635.5" y="770" width="279" height="63" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-75" value="&lt;b&gt;···&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="614.5" y="791.5" width="21" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-76" value="K2- V2&#39;（WeatherBean-Iteratble&amp;lt;Text&amp;gt;）" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="70.75" y="750" width="248.5" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-77" value="K2- V2&#39;（WeatherBean-Iteratble&amp;lt;Text&amp;gt;）" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="650.75" y="750" width="248.5" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-78" value="K2- V2&#39;（WeatherBean-Iteratble&amp;lt;Text&amp;gt;）" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="349.75" y="750" width="248.5" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-106" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Times New Roman;" parent="1" source="tV22roehR8ONlWOXkeKM-82" target="tV22roehR8ONlWOXkeKM-105" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-82" value="&lt;span style=&quot;background-color: initial;&quot;&gt;2015-01-08 19:05:36&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;6.3c&lt;br&gt;&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2015-01-06 17:29:52&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;5.9c&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2015-01-07 17:47:45&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;5.0c&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="60" y="880" width="270" height="63" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-110" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Times New Roman;" parent="1" source="tV22roehR8ONlWOXkeKM-83" target="tV22roehR8ONlWOXkeKM-108" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-83" value="&lt;span style=&quot;background-color: initial;&quot;&gt;2015-02-13 12:32:56&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;11.3c&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2015-02-15 12:49:00&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;4.7c&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2015-02-23 15:58:32&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2.9c&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="333.5" y="880" width="281" height="63" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-111" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Times New Roman;" parent="1" source="tV22roehR8ONlWOXkeKM-84" target="tV22roehR8ONlWOXkeKM-109" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-84" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2024-12-27 05:00:04&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;9.5c&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2024-12-26 06:48:45&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;7.9c&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2024-12-24 03:19:57&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;5.8c&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="635.5" y="880" width="279" height="63" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-85" value="&lt;b&gt;···&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="614.5" y="901.5" width="21" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-86" value="K3-V3（Text-NullWritable）" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="70.75" y="860" width="248.5" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-90" value="K3-V3（Text-NullWritable）" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="349.75" y="860" width="248.5" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-91" value="K3-V3（Text-NullWritable）" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="650.75" y="860" width="248.5" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-97" value="&lt;span style=&quot;background-color: initial;&quot;&gt;2015-01-08 19:05:36&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;6.3c&lt;br&gt;&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2015-01-06 17:29:52&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;5.9c&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2015-01-07 17:47:45&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;5.0c&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="60" y="993" width="270" height="63" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-98" value="&lt;span style=&quot;background-color: initial;&quot;&gt;2015-02-13 12:32:56&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;11.3c&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2015-02-15 12:49:00&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;4.7c&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2015-02-23 15:58:32&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2.9c&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="333.5" y="993" width="281" height="63" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-99" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2024-12-27 05:00:04&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;9.5c&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2024-12-26 06:48:45&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;7.9c&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2024-12-24 03:19:57&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;5.8c&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="635.5" y="993" width="279" height="63" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-105" value="result-000000" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="70.75" y="973" width="248.5" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-107" value="&lt;b&gt;···&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="614.5" y="1013" width="21" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-108" value="result-000001" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="349.75" y="973" width="248.5" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tV22roehR8ONlWOXkeKM-109" value="result-000011" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="650.75" y="973" width="248.5" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="-_J0_iTirUYkvdqiQrnf-2" value="&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;在Map阶段的map方法要将数据由&lt;b&gt;K1-V1转化成K2-V2&lt;/b&gt;。通过自定义weatherBean作为K2存储用于排序和分区的数据（温度、年份，月份），V2就为全部的一行数据，保证最后输出结果的完整&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=8;spacingRight=8;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="1061" y="102" width="259" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="-_J0_iTirUYkvdqiQrnf-3" value="&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Partiton阶段的逻辑决定了不同的数据会怎样被&lt;b&gt;分到不同的Reduce&lt;/b&gt;中,最终到不同的&lt;b&gt;结果文件&lt;/b&gt;中。在这个案例中，以月份为分区依据。&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=8;spacingRight=8;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="1061" y="215.75" width="259" height="61.5" as="geometry" />
+        </mxCell>
+        <mxCell id="-_J0_iTirUYkvdqiQrnf-4" value="&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Sort阶段根据weatherBean中的逻辑对数据进行&lt;b&gt;排序&lt;/b&gt;，按照月份升序温度降序。&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=8;spacingRight=8;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="1061" y="395" width="259" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="-_J0_iTirUYkvdqiQrnf-5" value="&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Group分组阶段会把&lt;b&gt;每个Reducer中&lt;/b&gt;的数据再按照自定义规则进行按月分组，&lt;b&gt;产生Iterable&amp;lt;Text&amp;gt;&lt;/b&gt;。由于默认的Group是按照Key进行分组，而我们的Key是一个weatherBean而非单一月份数据，因此要自定义weatherGroupComparator。&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=8;spacingRight=8;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="1061" y="583.25" width="259" height="119.5" as="geometry" />
+        </mxCell>
+        <mxCell id="-_J0_iTirUYkvdqiQrnf-6" value="&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;进入Reduce前，已经分组产生了有序的月份数据组，其是&lt;b&gt;可迭代对象&lt;/b&gt;。根据业务需求，迭代输出三次就是输出Top3高温的数据。&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=8;spacingRight=8;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="1055" y="795.5" width="259" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="-_J0_iTirUYkvdqiQrnf-7" value="" style="shape=crossbar;whiteSpace=wrap;html=1;rounded=1;direction=south;" parent="1" vertex="1">
+          <mxGeometry x="961" y="90" width="20" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="-_J0_iTirUYkvdqiQrnf-8" value="" style="shape=crossbar;whiteSpace=wrap;html=1;rounded=1;direction=south;" parent="1" vertex="1">
+          <mxGeometry x="961" y="210" width="20" height="73" as="geometry" />
+        </mxCell>
+        <mxCell id="-_J0_iTirUYkvdqiQrnf-11" value="" style="shape=crossbar;whiteSpace=wrap;html=1;rounded=1;direction=south;" parent="1" vertex="1">
+          <mxGeometry x="961" y="283" width="20" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="-_J0_iTirUYkvdqiQrnf-12" value="" style="shape=crossbar;whiteSpace=wrap;html=1;rounded=1;direction=south;" parent="1" vertex="1">
+          <mxGeometry x="961" y="563" width="20" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="-_J0_iTirUYkvdqiQrnf-15" value="" style="shape=crossbar;whiteSpace=wrap;html=1;rounded=1;direction=south;" parent="1" vertex="1">
+          <mxGeometry x="961" y="723" width="20" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="-_J0_iTirUYkvdqiQrnf-18" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="981" y="90" width="20" height="120" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
